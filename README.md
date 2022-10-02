@@ -1,6 +1,6 @@
 # Jogo da Velha com IA
-Desenvolvi um pequeno jogo simples, onde você pdoe jogar com uma IA simples.
-Usando somente ferramentas básicas, sem nenhuma biblioteca.
+Desenvolvi um jogo simples, onde você pode jogar com uma IA.
+Usando somente ferramentas básicas, sem nenhuma biblioteca e somente Javascript, HTML5 e CSS3.
 
 # Start
 - Basta escolher X ou O e comece a se divertir.
