@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Jogo da Velha</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Jogo da Velha</h1>
+    <h2>Jogador da vez: <span id="sJogadorDaVez">Escolha X ou O</span></h2>
+  </header>
+
+  <main>
+    <section id="sectionBtnsChoose" class="section-btns-choose">
+      <button id="X" class="btn-choose" onClick="btnChoose(event)">X</button>
+      <button id="O" class="btn-choose" onClick="btnChoose(event)">O</button>
+    </section>
+
+    <section id="sectionBtnReset" class="section-btn-reset">
+      <button onclick="resetGame()">Resetar Jogo</button>
+    </section>
+
+    <section id="sectionTile">
+      <div class="tile_row">
+        <span id="1" class="tile" onClick="clickSpan(event)"></span>
+        <span id="2" class="tile" onClick="clickSpan(event)"></span>
+        <span id="3" class="tile" onClick="clickSpan(event)"></span>
+      </div>
+      <div class="tile_row">
+        <span id="4" class="tile" onClick="clickSpan(event)"></span>
+        <span id="5" class="tile" onClick="clickSpan(event)"></span>
+        <span id="6" class="tile" onClick="clickSpan(event)"></span>
+      </div>
+      <div class="tile_row">
+        <span id="7" class="tile" onClick="clickSpan(event)"></span>
+        <span id="8" class="tile" onClick="clickSpan(event)"></span>
+        <span id="9" class="tile" onClick="clickSpan(event)"></span>
+      </div>
+    </section>
+
+    <div class="div-stopwatch">
+      <p><span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span></p>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="./src/game.js"></script>
+</body>
+
+</html>
