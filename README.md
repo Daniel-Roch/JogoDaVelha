@@ -9,4 +9,4 @@ Usando somente ferramentas básicas, sem nenhuma biblioteca.
 - Implementar uma IA um pouco mais lógica.
 
 # Netlify
-- Você pode visualizar o projeto clicando no [Link](mellifluous-croquembouche-0d0f65.netlify.app).
+- Você pode visualizar o projeto clicando no [Link](https://mellifluous-croquembouche-0d0f65.netlify.app/).
