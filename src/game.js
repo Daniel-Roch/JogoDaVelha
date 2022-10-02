@@ -1,12 +1,30 @@
+import { start,reset } from "./stopwatch.js ";
+
 let chooseOption;
 const messageForUser = document.getElementById("sJogadorDaVez")
 const sectionTile = document.getElementById("sectionTile")
+
+const btnReset = document.getElementById("btnReset").addEventListener('click',()=>{resetGame()})
+const btnX = document.getElementById("X").addEventListener('click',(event)=>{btnChoose(event)})
+const btnO = document.getElementById("O").addEventListener('click',(event)=>{btnChoose(event)})
+
 
 const arrayTile =[
     [document.getElementById("1"),document.getElementById("2"),document.getElementById("3")],
     [document.getElementById("4"),document.getElementById("5"),document.getElementById("6")],
     [document.getElementById("7"),document.getElementById("8"),document.getElementById("9")]
 ]
+
+arrayTile[0][0].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[0][1].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[0][2].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[1][0].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[1][1].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[1][2].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[2][0].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[2][1].addEventListener('click',(event)=>{clickSpan(event)})
+arrayTile[2][2].addEventListener('click',(event)=>{clickSpan(event)})
+
 
 function clickSpan(event){
     if(chooseOption != undefined && chooseOption == "X"){
@@ -27,11 +45,13 @@ function btnChoose(event){
         document.getElementById("O").disabled = true;
         messageForUser.innerText = "Agora escolha uma posição"
         document.getElementById("sectionBtnsChoose").style.pointerEvents = "none"
+        start()
  
     }else if(event.target.id == "O"){
         document.getElementById("X").disabled = true;
         messageForUser.innerText = "Agora escolha uma posição"
         document.getElementById("sectionBtnsChoose").style.pointerEvents = "none"
+        start()
     }
 }
 
@@ -80,6 +100,7 @@ function computerChoose(){
         }
     }else{
         messageForUser.innerText = "Empate!"
+        reset()
         sectionTile.style.pointerEvents ="none"
     }
     
@@ -95,30 +116,36 @@ function verifyLine(){
         if(arrayTile[0][0].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }else if(secondLine){
         if(arrayTile[1][0].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }else if(thirdLine){
         if(arrayTile[2][0].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }
@@ -136,30 +163,36 @@ function verifyColumn(){
         if(arrayTile[0][0].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }else if(secondColumn){
         if(arrayTile[0][1].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }else if(thirdColumn){
         if(arrayTile[0][2].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }
@@ -176,20 +209,24 @@ function verifyDiagonal(){
         if(arrayTile[0][0].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }else if(secondDiagonal){
         if(arrayTile[0][2].innerText == chooseOption){
             messageForUser.innerText = "Você Ganhou!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }else{
             messageForUser.innerText = "Eu Ganhei!!"
             sectionTile.style.pointerEvents ="none"
+            reset()
             return true;
         }
     }
@@ -197,6 +234,7 @@ function verifyDiagonal(){
 }
 
 function resetGame(){
+    reset()
     chooseOption = undefined;
     document.getElementById("X").disabled = false;
     document.getElementById("O").disabled = false;
